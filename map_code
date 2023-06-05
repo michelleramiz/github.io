@@ -1,0 +1,17 @@
+import geopandas as gpd
+import matplotlib.pyplot as plt
+
+# Read the GeoJSON file for light rail lines
+metro_lines = gpd.read_file('metro_lines.geojson')
+
+# Create a figure and axis
+fig, ax = plt.subplots(figsize=(10, 10))
+
+# Plot the light rail lines
+metro_lines.plot(ax=ax, linewidth=2, cmap='Set2')
+
+# Set the title of the map
+ax.set_title('Los Angeles County Light Rail Lines')
+
+# Set the aspect ratio
+ax.set_aspect('equal')
